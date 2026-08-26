@@ -1,0 +1,19 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  name: halo-admonition
+spec:
+  enabled: true
+  requires: ">=2.26.0"
+  author:
+    name: jeron-lgy
+    website: https://github.com/jeron-lgy
+  logo: logo.svg
+  homepage: https://github.com/jeron-lgy/halo-admonition
+  repo: https://github.com/jeron-lgy/halo-admonition
+  issues: https://github.com/jeron-lgy/halo-admonition/issues
+  displayName: "提示框与按钮"
+  description: "为 Halo 默认编辑器提供提示框、渐变按钮和可自动读取信息的外链卡片。"
+  license:
+    - name: GPL-3.0-only
+      url: https://github.com/jeron-lgy/halo-admonition/blob/main/LICENSE

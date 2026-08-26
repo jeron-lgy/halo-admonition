@@ -1,0 +1,10 @@
+Halo Admonition
+Copyright (C) 2026 jeron-lgy
+
+This project includes software adapted from plugin-content-widgets,
+Copyright (C) Handsome and contributors, licensed under GPL-3.0.
+
+The admonition syntax, type system, and visual design are based in part on
+hexo-admonition-new, Copyright (c) 2025 x1ren, licensed under the MIT License.
+
+See THIRD_PARTY_NOTICES.md and the LICENSES directory for details.

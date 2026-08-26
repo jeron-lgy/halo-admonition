@@ -1,0 +1,462 @@
+:root {
+  --halo-admonition-bg: #f8fafc;
+  --halo-admonition-border: #64748b;
+  --halo-admonition-title-bg: rgb(100 116 139 / 10%);
+  --halo-admonition-title-color: #334155;
+  --halo-admonition-shadow: 0 2px 5px rgb(15 23 42 / 6%);
+  --halo-admonition-text-color: #334155;
+  --halo-button-bg: #2563eb;
+  --halo-button-bg-hover: #1d4ed8;
+  --halo-button-color: #fff;
+  --halo-button-border: #2563eb;
+  --halo-button-primary: #2563eb;
+}
+
+[data-theme='dark'],
+.dark {
+  --halo-admonition-bg: #18181b;
+  --halo-admonition-title-color: #e4e4e7;
+  --halo-admonition-shadow: 0 2px 5px rgb(0 0 0 / 35%);
+}
+
+.halo-admonition {
+  margin: 1rem 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--halo-admonition-border) 35%, transparent);
+  border-inline-start: 0.3rem solid var(--halo-admonition-border);
+  border-radius: 0.5rem;
+  background: var(--halo-admonition-bg);
+  color: var(--halo-admonition-text-color);
+  box-shadow: var(--halo-admonition-shadow);
+  break-inside: avoid;
+}
+
+.halo-admonition-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.4rem;
+  margin: 0 !important;
+  padding: 0.45rem 0.8rem;
+  background: var(--halo-admonition-title-bg);
+  color: var(--halo-admonition-title-color);
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.halo-admonition-icon {
+  flex: 0 0 auto;
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
+  font-size: 1.05em;
+  max-width: 1.2em !important;
+  max-height: 1.2em !important;
+}
+
+.halo-admonition-title-text {
+  flex: 1;
+}
+
+.halo-admonition-content {
+  padding: 0.75rem 1rem;
+  line-height: 1.75;
+}
+
+.halo-admonition-details > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.halo-admonition-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.halo-admonition-chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-inline-end: 2px solid currentcolor;
+  border-block-end: 2px solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+}
+
+.halo-admonition-details[open] .halo-admonition-chevron {
+  transform: rotate(225deg);
+}
+
+.halo-admonition-anote {
+  --halo-admonition-border: #448aff;
+  --halo-admonition-title-bg: rgb(68 138 255 / 10%);
+  --halo-admonition-title-color: #2962ff;
+}
+
+.halo-admonition-info,
+.halo-admonition-todo {
+  --halo-admonition-border: #00b8d4;
+  --halo-admonition-title-bg: rgb(0 184 212 / 10%);
+  --halo-admonition-title-color: #007c91;
+}
+
+.halo-admonition-warning {
+  --halo-admonition-border: #ff9100;
+  --halo-admonition-title-bg: rgb(255 145 0 / 10%);
+  --halo-admonition-title-color: #b45309;
+}
+
+.halo-admonition-danger,
+.halo-admonition-bug {
+  --halo-admonition-border: #ff5252;
+  --halo-admonition-title-bg: rgb(255 82 82 / 10%);
+  --halo-admonition-title-color: #b91c1c;
+}
+
+.halo-admonition-tip {
+  --halo-admonition-border: #00bfa5;
+  --halo-admonition-title-bg: rgb(0 191 165 / 10%);
+  --halo-admonition-title-color: #047857;
+}
+
+.halo-admonition-success,
+.halo-admonition-question {
+  --halo-admonition-border: #22c55e;
+  --halo-admonition-title-bg: rgb(34 197 94 / 10%);
+  --halo-admonition-title-color: #15803d;
+}
+
+.halo-admonition-example {
+  --halo-admonition-border: #7c4dff;
+  --halo-admonition-title-bg: rgb(124 77 255 / 10%);
+  --halo-admonition-title-color: #6d28d9;
+}
+
+.halo-admonition-quote {
+  --halo-admonition-border: #9e9e9e;
+  --halo-admonition-title-bg: rgb(158 158 158 / 10%);
+  --halo-admonition-title-color: #52525b;
+}
+
+.halo-button-group {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.halo-button {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 0.55rem 1rem !important;
+  border: 1px solid var(--halo-button-border) !important;
+  background: var(--halo-button-bg) !important;
+  color: var(--halo-button-color) !important;
+  font: inherit;
+  font-weight: 550;
+  line-height: 1.25;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
+  transition: transform 150ms ease, background-color 150ms ease, border-color 150ms ease,
+    box-shadow 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.halo-button:hover {
+  border-color: color-mix(in srgb, var(--halo-button-primary) 28%, var(--halo-button-border)) !important;
+  background: var(--halo-button-bg-hover) !important;
+  color: var(--halo-button-color) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgb(15 23 42 / 10%);
+}
+
+.halo-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--halo-button-primary) 32%, transparent);
+  outline-offset: 2px;
+}
+
+.halo-button-square {
+  border-radius: 0.3rem !important;
+}
+
+.halo-button-rounded {
+  border-radius: 0.75rem !important;
+}
+
+.halo-button-pill {
+  border-radius: 999px !important;
+  padding-inline: 1.15rem !important;
+}
+
+.halo-button-primary {
+  border-color: var(--halo-button-primary) !important;
+  background: var(--halo-button-bg) !important;
+  color: var(--halo-button-color) !important;
+}
+
+.halo-button-primary:hover {
+  border-color: color-mix(in srgb, var(--halo-button-primary) 85%, #000) !important;
+  background: var(--halo-button-bg-hover) !important;
+  color: var(--halo-button-color) !important;
+}
+
+.halo-inline-button {
+  display: inline-flex !important;
+  width: auto !important;
+  min-height: 2.25rem;
+  margin: 0 0.2em !important;
+  padding: 0.42rem 1rem !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+.halo-inline-button-shell {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.halo-button-outline {
+  border-color: color-mix(in srgb, var(--halo-button-primary) 65%, transparent) !important;
+  background: transparent !important;
+  color: var(--halo-button-primary) !important;
+}
+
+.halo-button-ghost {
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.halo-button-icon-host {
+  display: inline-flex;
+  flex: 0 0 1.15em;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em !important;
+  height: 1.15em !important;
+  max-width: 1.15em !important;
+  max-height: 1.15em !important;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.halo-button-icon,
+.halo-button-icon-host > svg,
+.halo-button-icon-host > img,
+.halo-button-icon-host > span {
+  display: inline-block !important;
+  flex: 0 0 auto;
+  width: 1.15em !important;
+  height: 1.15em !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 1.15em !important;
+  max-height: 1.15em !important;
+  object-fit: contain;
+  line-height: 1 !important;
+}
+
+.halo-external-card-shell {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 1rem 0 !important;
+}
+
+.halo-external-card {
+  position: relative;
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 7.25rem;
+  margin: 0 !important;
+  padding: 1rem 1.1rem !important;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--halo-external-card-accent) 38%, transparent) !important;
+  border-inline-start: 0.3rem solid var(--halo-external-card-accent) !important;
+  border-radius: 1rem !important;
+  background: var(--halo-external-card-bg) !important;
+  color: var(--halo-external-card-color) !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgb(15 23 42 / 10%);
+  isolation: isolate;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.halo-external-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 0 0,
+    color-mix(in srgb, var(--halo-external-card-accent) 20%, transparent),
+    transparent 48%
+  );
+  content: '';
+  pointer-events: none;
+}
+
+.halo-external-card:hover {
+  border-color: color-mix(in srgb, var(--halo-external-card-accent) 68%, transparent) !important;
+  background: var(--halo-external-card-bg) !important;
+  color: var(--halo-external-card-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgb(15 23 42 / 16%);
+}
+
+.halo-external-card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--halo-external-card-accent) 38%, transparent);
+  outline-offset: 3px;
+}
+
+.halo-external-card-icon-host,
+.halo-external-card-arrow {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--halo-external-card-accent) !important;
+}
+
+.halo-external-card-media {
+  display: block !important;
+  width: 100% !important;
+  height: 4.6rem !important;
+  overflow: hidden !important;
+  border-radius: 0.75rem !important;
+  background: color-mix(in srgb, var(--halo-external-card-accent) 10%, transparent);
+}
+
+.halo-external-card-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+}
+
+.halo-external-card-icon-host {
+  width: 3.25rem !important;
+  height: 3.25rem !important;
+  border: 1px solid color-mix(in srgb, var(--halo-external-card-accent) 32%, transparent);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--halo-external-card-accent) 14%, transparent);
+  font-size: 1.3rem;
+}
+
+.halo-external-card-copy {
+  display: grid !important;
+  gap: 0.22rem;
+  min-width: 0;
+  color: inherit !important;
+}
+
+.halo-external-card-eyebrow {
+  overflow: hidden;
+  color: var(--halo-external-card-accent) !important;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.halo-external-card-title {
+  display: block !important;
+  overflow: hidden;
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: 1.05rem;
+  font-weight: 750;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.halo-external-card-description {
+  display: -webkit-box !important;
+  overflow: hidden;
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  opacity: 0.72;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.halo-external-card-arrow {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--halo-external-card-accent) 14%, transparent);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.halo-external-card:hover .halo-external-card-arrow {
+  background: color-mix(in srgb, var(--halo-external-card-accent) 22%, transparent);
+  transform: translateX(2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='auto'] {
+    --halo-admonition-bg: #18181b;
+    --halo-admonition-title-color: #e4e4e7;
+    --halo-admonition-shadow: 0 2px 5px rgb(0 0 0 / 35%);
+  }
+}
+
+@media (max-width: 480px) {
+  .halo-button-group {
+    gap: 0.55rem;
+  }
+
+  .halo-button {
+    min-height: 2.6rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .halo-external-card {
+    gap: 0.75rem;
+    min-height: 6.5rem;
+    padding: 0.85rem !important;
+  }
+
+  .halo-external-card-icon-host {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+  }
+
+  .halo-external-card-description {
+    -webkit-line-clamp: 1;
+  }
+
+  .halo-external-card-media {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halo-admonition-chevron,
+  .halo-button,
+  .halo-external-card,
+  .halo-external-card-arrow {
+    transition: none;
+  }
+}

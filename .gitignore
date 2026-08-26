@@ -1,0 +1,10 @@
+.gradle/
+build/
+out/
+ui/build/
+ui/node_modules/
+ui/*.tsbuildinfo
+ui/.eslintcache
+workplace/
+src/main/resources/ui/
+*.log

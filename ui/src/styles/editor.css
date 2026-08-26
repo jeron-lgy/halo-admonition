@@ -1,0 +1,595 @@
+.halo-editor-node {
+  display: block;
+  position: relative;
+  min-width: 0;
+  margin: 0.75rem 0;
+  border-radius: 10px;
+}
+
+.halo-editor-node.is-selected {
+  outline: 2px solid rgb(37 99 235 / 34%);
+  outline-offset: 4px;
+}
+
+.halo-editor-node-preview {
+  min-width: 0;
+}
+
+.halo-editor-node-preview > :first-child {
+  margin-block: 0;
+}
+
+.halo-editor-node-preview a {
+  pointer-events: none;
+}
+
+.halo-inline-button-node {
+  display: inline !important;
+  margin: 0 !important;
+  white-space: normal;
+}
+
+.halo-inline-button-node.is-selected .halo-inline-button {
+  outline: 3px solid rgb(37 99 235 / 24%);
+  outline-offset: 2px;
+}
+
+.halo-inline-button-preview {
+  display: inline !important;
+}
+
+.halo-inline-button-preview a {
+  pointer-events: none;
+}
+
+.halo-editor-panel {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #dbe7f5;
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  box-shadow: 0 12px 32px rgb(15 23 42 / 10%);
+}
+
+.halo-editor-panel-head,
+.halo-button-editor-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.halo-editor-panel-head > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.halo-editor-panel-head strong,
+.halo-button-editor-card > header strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.halo-editor-panel-head span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.halo-delete-button,
+.halo-card-actions button,
+.halo-add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.halo-delete-button {
+  width: 34px;
+  height: 34px;
+}
+
+.halo-delete-button svg,
+.halo-card-actions svg,
+.halo-add-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.halo-delete-button:hover,
+.halo-card-actions button:hover:not(:disabled) {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.halo-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.halo-form-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.halo-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.halo-field-label {
+  color: #374151;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.halo-field-help {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.halo-field input,
+.halo-field select,
+.halo-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.halo-metadata-url-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.halo-metadata-url-row > input[type='text'] {
+  min-height: 40px !important;
+  padding: 0 12px !important;
+  border: 1px solid #94a3b8 !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: #111827 !important;
+  box-shadow: inset 0 1px 2px rgb(15 23 42 / 5%) !important;
+}
+
+.halo-metadata-url-row > input[type='text']:focus {
+  border-color: #2563eb !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 14%) !important;
+}
+
+.halo-metadata-url-row button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 126px;
+  padding: 0 12px;
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.halo-metadata-url-row button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.halo-metadata-url-row svg {
+  width: 15px;
+  height: 15px;
+}
+
+.halo-metadata-message {
+  margin: -6px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.halo-preview-toggle {
+  align-self: end;
+  min-height: 38px;
+}
+
+.halo-field input,
+.halo-field select {
+  height: 36px;
+  padding: 0 10px;
+}
+
+.halo-field textarea {
+  min-height: 90px;
+  padding: 9px 10px;
+  resize: vertical;
+}
+
+.halo-field input:focus,
+.halo-field select:focus,
+.halo-field textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+/* Halo themes may globally reset form controls. Keep every editable field in
+ * component panels visibly identifiable without affecting color/checkbox inputs. */
+.halo-editor-panel .halo-field > input[type='text'],
+.halo-editor-panel .halo-field > input[type='url'],
+.halo-editor-panel .halo-field > select,
+.halo-editor-panel .halo-field > textarea {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 40px !important;
+  padding: 0 12px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: #111827 !important;
+  box-shadow: inset 0 1px 2px rgb(15 23 42 / 5%) !important;
+  outline: none !important;
+}
+
+.halo-editor-panel .halo-field > textarea {
+  min-height: 90px !important;
+  padding-block: 10px !important;
+}
+
+.halo-editor-panel .halo-field > input[type='text']:focus,
+.halo-editor-panel .halo-field > input[type='url']:focus,
+.halo-editor-panel .halo-field > select:focus,
+.halo-editor-panel .halo-field > textarea:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 14%) !important;
+}
+
+.halo-toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.halo-toggle-row label,
+.halo-checkbox-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.halo-toggle-row input,
+.halo-checkbox-field input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+}
+
+.halo-color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.halo-color-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.halo-color-field {
+  display: grid;
+  gap: 6px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.halo-color-control {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 5px 9px 5px 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.halo-color-control input[type='color'] {
+  width: 38px;
+  height: 28px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.halo-color-control code {
+  color: #475569;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.halo-icon-picker {
+  gap: 8px;
+}
+
+.halo-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+  gap: 6px;
+}
+
+.halo-icon-option {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: 38px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+}
+
+.halo-icon-option:hover,
+.halo-icon-option.is-active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.halo-icon-option svg {
+  width: 19px;
+  height: 19px;
+}
+
+.halo-custom-icon-field {
+  margin-top: 2px;
+}
+
+.halo-button-editor-card {
+  display: grid;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.halo-card-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.halo-card-actions button {
+  width: 29px;
+  height: 29px;
+}
+
+.halo-card-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.halo-add-button {
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  justify-self: start;
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.halo-add-button:hover {
+  background: #dbeafe;
+}
+
+.halo-component-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(15 23 42 / 42%);
+  backdrop-filter: blur(6px);
+}
+
+.halo-component-picker {
+  display: grid;
+  gap: 16px;
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(82vh, 680px);
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  color: #111827;
+  box-shadow: 0 28px 90px rgb(15 23 42 / 30%);
+}
+
+.halo-component-picker > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.halo-component-picker h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.halo-component-picker p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.halo-inline-button-panel-host {
+  display: block !important;
+  width: 100% !important;
+  margin: 14px 0 4px !important;
+  white-space: normal;
+}
+
+.halo-inline-editor-panel {
+  width: 100%;
+  margin-top: 0;
+  outline: 2px solid rgb(37 99 235 / 24%);
+  outline-offset: 4px;
+}
+
+.halo-picker-close {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  cursor: pointer;
+}
+
+.halo-picker-close svg,
+.halo-picker-search svg {
+  width: 18px;
+  height: 18px;
+}
+
+.halo-picker-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  color: #64748b;
+}
+
+.halo-picker-search:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.halo-picker-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+}
+
+.halo-component-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.halo-component-card {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  background: #fff;
+  color: #111827;
+  text-align: left;
+  cursor: pointer;
+}
+
+.halo-component-card:hover {
+  border-color: #60a5fa;
+  background: #f8fbff;
+  box-shadow: 0 8px 24px rgb(37 99 235 / 9%);
+}
+
+.halo-component-card-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: #eff6ff;
+  font-size: 23px;
+}
+
+.halo-component-card > span:last-child {
+  display: grid;
+  gap: 4px;
+}
+
+.halo-component-card strong {
+  font-size: 15px;
+}
+
+.halo-component-card small {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.halo-picker-empty {
+  padding: 24px;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .halo-form-grid,
+  .halo-form-grid-three,
+  .halo-color-grid,
+  .halo-color-grid-two,
+  .halo-component-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .halo-metadata-url-row {
+    grid-template-columns: 1fr;
+  }
+
+  .halo-component-picker-overlay {
+    padding: 12px;
+  }
+
+  .halo-component-picker {
+    width: calc(100vw - 24px);
+    padding: 16px;
+  }
+
+}
