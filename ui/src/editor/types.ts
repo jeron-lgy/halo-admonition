@@ -27,7 +27,7 @@ export interface AdmonitionAttrs {
 
 export type ButtonShape = 'square' | 'rounded' | 'pill'
 export type ButtonVariant = 'default' | 'primary' | 'outline' | 'ghost'
-export type ButtonIconPosition = 'before' | 'after'
+export type ButtonIconPosition = 'before' | 'after' | 'none'
 
 export interface ButtonConfig {
   id: string
@@ -55,6 +55,7 @@ export interface InlineButtonAttrs {
   icon: string
   customIcon: string
   iconPosition: ButtonIconPosition
+  shape: ButtonShape
   backgroundColor: string
   backgroundEndColor: string
   textColor: string

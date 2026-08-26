@@ -438,6 +438,7 @@ export function createDefaultInlineButtonAttrs(): InlineButtonAttrs {
     icon: button.icon,
     customIcon: button.customIcon,
     iconPosition: button.iconPosition,
+    shape: button.shape,
     backgroundColor: button.backgroundColor,
     backgroundEndColor: button.backgroundEndColor,
     textColor: button.textColor,

@@ -221,9 +221,12 @@ function createButtonElement(button: ButtonConfig): HTMLAnchorElement {
 
   const iconHost = document.createElement('span')
   iconHost.className = 'halo-button-icon-host'
-  appendIcon(iconHost, button.icon, button.customIcon, 'halo-button-icon')
+  if (button.iconPosition !== 'none') {
+    appendIcon(iconHost, button.icon, button.customIcon, 'halo-button-icon')
+  }
 
-  if (button.iconPosition === 'after') anchor.append(text, iconHost)
+  if (!iconHost.hasChildNodes()) anchor.append(text)
+  else if (button.iconPosition === 'after') anchor.append(text, iconHost)
   else anchor.append(iconHost, text)
   return anchor
 }
@@ -247,7 +250,12 @@ export function parseButtonGroupElement(element: HTMLElement): ButtonGroupAttrs 
       href: anchor.getAttribute('href') ?? '#',
       icon: anchor.dataset.icon ?? '',
       customIcon: anchor.dataset.customIcon ?? '',
-      iconPosition: anchor.dataset.iconPosition === 'before' ? 'before' : 'after',
+      iconPosition:
+        anchor.dataset.iconPosition === 'none'
+          ? 'none'
+          : anchor.dataset.iconPosition === 'before'
+            ? 'before'
+            : 'after',
       shape:
         anchor.dataset.shape === 'square' || anchor.dataset.shape === 'pill'
           ? anchor.dataset.shape
@@ -276,6 +284,7 @@ export function createInlineButtonElement(attrs: InlineButtonAttrs): HTMLElement
   wrapper.dataset.icon = attrs.icon
   wrapper.dataset.customIcon = attrs.customIcon
   wrapper.dataset.iconPosition = attrs.iconPosition
+  wrapper.dataset.shape = attrs.shape
   wrapper.dataset.backgroundColor = safeColor(attrs.backgroundColor, '#0ea5ff')
   wrapper.dataset.backgroundEndColor = safeColor(attrs.backgroundEndColor, '#1d3fd8')
   wrapper.dataset.textColor = safeColor(attrs.textColor, '#ffffff')
@@ -283,7 +292,6 @@ export function createInlineButtonElement(attrs: InlineButtonAttrs): HTMLElement
   const anchor = createButtonElement({
     id: 'inline',
     preset: '',
-    shape: 'pill',
     variant: 'primary',
     ...attrs,
   })
@@ -306,7 +314,17 @@ export function parseInlineButtonElement(element: HTMLElement): InlineButtonAttr
     icon: element.dataset.icon ?? anchor?.dataset.icon ?? '',
     customIcon: element.dataset.customIcon ?? anchor?.dataset.customIcon ?? '',
     iconPosition:
-      (element.dataset.iconPosition ?? anchor?.dataset.iconPosition) === 'before' ? 'before' : 'after',
+      (element.dataset.iconPosition ?? anchor?.dataset.iconPosition) === 'none'
+        ? 'none'
+        : (element.dataset.iconPosition ?? anchor?.dataset.iconPosition) === 'before'
+          ? 'before'
+          : 'after',
+    shape:
+      (element.dataset.shape ?? anchor?.dataset.shape) === 'square'
+        ? 'square'
+        : (element.dataset.shape ?? anchor?.dataset.shape) === 'rounded'
+          ? 'rounded'
+          : 'pill',
     backgroundColor: safeColor(
       element.dataset.backgroundColor ?? anchor?.dataset.backgroundColor ?? '',
       '#0ea5ff',

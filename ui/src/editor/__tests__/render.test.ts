@@ -137,6 +137,30 @@ describe('inline button rendering', () => {
     expect(link?.style.getPropertyValue('--halo-button-bg')).toContain('linear-gradient')
     expect(parseInlineButtonElement(element)).toEqual(original)
   })
+
+  it('supports every corner style and removes icon spacing when the icon is hidden', () => {
+    const original = {
+      ...createDefaultInlineButtonAttrs(),
+      iconPosition: 'none' as const,
+      shape: 'square' as const,
+    }
+    const element = createInlineButtonElement(original)
+    const link = element.querySelector<HTMLAnchorElement>('.halo-inline-button')!
+
+    expect(link.classList.contains('halo-button-square')).toBe(true)
+    expect(link.style.borderRadius).toBe('0.3rem')
+    expect(link.querySelector('.halo-button-icon-host')).toBeNull()
+    expect(link.children).toHaveLength(1)
+    expect(parseInlineButtonElement(element)).toEqual(original)
+  })
+
+  it('keeps legacy inline buttons pill-shaped when no shape was stored', () => {
+    const element = createInlineButtonElement(createDefaultInlineButtonAttrs())
+    element.removeAttribute('data-shape')
+    element.querySelector('.halo-inline-button')?.removeAttribute('data-shape')
+
+    expect(parseInlineButtonElement(element).shape).toBe('pill')
+  })
 })
 
 describe('external card rendering', () => {

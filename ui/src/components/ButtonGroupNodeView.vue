@@ -151,6 +151,7 @@ function removeNode() {
           <label class="halo-field">
             <span class="halo-field-label">图标位置</span>
             <select :value="button.iconPosition" @change="updateSelect(index, 'iconPosition', $event)">
+              <option value="none">不显示</option>
               <option value="before">文字前</option>
               <option value="after">文字后</option>
             </select>

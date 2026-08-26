@@ -67,7 +67,7 @@ function removeNode() {
           </button>
         </header>
 
-        <div class="halo-form-grid">
+        <div class="halo-form-grid halo-form-grid-three">
           <label class="halo-field">
             <span class="halo-field-label">按钮文字</span>
             <input type="text" :value="attrs.text" @input="updateText('text', $event)" />
@@ -75,8 +75,17 @@ function removeNode() {
           <label class="halo-field">
             <span class="halo-field-label">图标位置</span>
             <select :value="attrs.iconPosition" @change="update({ iconPosition: ($event.target as HTMLSelectElement).value as InlineButtonAttrs['iconPosition'] })">
+              <option value="none">不显示</option>
               <option value="before">文字前</option>
               <option value="after">文字后</option>
+            </select>
+          </label>
+          <label class="halo-field">
+            <span class="halo-field-label">圆角</span>
+            <select :value="attrs.shape" @change="update({ shape: ($event.target as HTMLSelectElement).value as InlineButtonAttrs['shape'] })">
+              <option value="square">小圆角</option>
+              <option value="rounded">圆角</option>
+              <option value="pill">胶囊</option>
             </select>
           </label>
         </div>
